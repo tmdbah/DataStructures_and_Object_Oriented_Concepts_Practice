@@ -4,19 +4,29 @@
  * @author Thiernomamadou Bah
  */
 
+package com.company;
+
 import java.util.*;
-import java.util.Collections;
 
 public class Main {
 
     public static void main(String[] args) {
-	     // Question One
+
+        // --------------------------------------------------------------------[ Test Cases }----- //
+
+        // All Test Cases and corresponding methods should run in isolation except for Question 10 which also uses the method getParsedUsers from Question 4 to Test Data.
+        // All Code is commented out
+
+
+         // -------------------------------------------------------------------[ Question 1 ]----- //
 
          // fizzBuzz();
 
-        // Question Two
 
-        /*
+        // --------------------------------------------------------------------[ Question 2 ]----- //
+
+/*
+
         ArrayList<Integer> testNumbers = new ArrayList<>();
 
         for (int i = 1; i < 21 ; i++) {
@@ -29,83 +39,208 @@ public class Main {
             System.out.println("Test Number is " + testNum + " Is "+ testNum + " Even? True or False: " +  result);
 
         }
-         */
 
-        // Question 3
 
-        /*
+        // --------------------------------------------------------------------[ Question 3 ]----- //
+
+
         Integer arr[] = {5, 6, 7, 8, 1};
 
         Integer result = getMinimum(arr);
 
         System.out.println(result);
-        */
 
-        // Question 4
 
-        for (String user : Data.users) {
-            String[] result = user.split(",",0);
-            System.out.println("result = ");
-            for (String str : result) {
-                System.out.println(str + ", ");
-            }
+        // --------------------------------------------------------------------[ Question 4 ]----- //
+
+
+        for (User user : getParsedUsers(Data.users)) {
+            System.out.println(user.toString());
         }
 
-       // User user = new User();
 
-      // Question 5
-        /*
+        // --------------------------------------------------------------------[ Question 5 ]----- //
+
         ArrayList<User> users = new ArrayList<User>();
-        User user1 = new User("Oscar","Smith", "40", "Oscar.Smith@email.com", "Male", "LA", "CA");
-        User user2 = new User("Mike","Jordan", "50", "Mike.Jordan@email.com", "Male", "CLT", "NC");
-        User user3 = new User("Nicole","Baker", "20", "Nicole.baker@email.com", "Female", "New York", "NY");
-        User user4 = new User("Paula","Gonzales", "31", "Paul.Gonzales@email.com", "Female", "Clover", "SC");
+        User user1 = new User("Oola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user2 = new User("Mybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL");
+        User user3 = new com.company.User("Casi,Roizn,78,croizn2@scribd.com,Female,San Jose,CA");
+        User user4 = new com.company.User("Neriann,Blackadder,83,tblackadderpt@go.com,Female,Raleigh,NC");
         users.add(user1);
         users.add(user2);
         users.add(user3);
         users.add(user4);
 
-//        for (User theUser : users) {
-//            System.out.println(theUser.toString());
-//        }
 
         printUsers_OMN(users);
 
-         */
+        // --------------------------------------------------------------------[ Question 6 ]----- //
 
-        // Question 6
-
-        /*
         ArrayList<User> users = new ArrayList<User>();
-        User user1 = new User("Oscar","Smith", "40", "Oscar.Smith@email.com", "Male", "LA", "CA");
-        User user2 = new User("Mike","Jordan", "50", "Mike.Jordan@email.com", "Male", "CLT", "NC");
-        User user3 = new User("Nicole","Baker", "20", "Nicole.baker@email.com", "Female", "New York", "NY");
-        User user4 = new User("Paula","Gonzales", "31", "Paul.Gonzales@email.com", "Female", "Clover", "SC");
+        User user1 = new User("Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user2 = new User("Sybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL");
+        User user3 = new User("Casi,Roizn,78,croizn2@scribd.com,Female,San Jose,CA");
+        com.company.User user4 = new User("Wilma,Guilaem,84,wguilaem3@sourceforge.net,Female,Pensacola,FL");
         users.add(user1);
         users.add(user2);
         users.add(user3);
         users.add(user4);
 
-        //System.out.println("Before Sort: " + users);
+   //     System.out.println("Before Sort: " + users); // For Testing Users Before sort ##Delete-ME##
 
-        Collections.sort(users, new Comparator<User>() {
-            @Override
-            public int compare(User userA, User userB) {
-                return userA.age.compareTo(userB.age);
-            }
-        });
+        printUsersSortedByAge(users);
 
-        //System.out.println("After Sort: " + users);
+ */
 
-        for (User userResult : users) {
-            System.out.println(userResult.firstname + " " + userResult.lastname + " " + userResult.age);
+/*
+
+        // --------------------------------------------------------------------[ Question 7 ]----- //
+
+
+        ArrayList<User> users = new ArrayList<User>();
+        User user1 = new User("Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user2 = new User("Sybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL");
+        User user3 = new User("Casi,Roizn,78,croizn2@scribd.com,Female,San Jose,CA");
+        User user4 = new User("Wilma,Guilaem,84,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user5 = new User("Bulma,Smith,48,bsmith3@sourceforge.net,Female,Pensacola,FL");
+        User user6 = new User("Lola,Grimsdyke,12,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user7 = new User("Sybilla,Martinetto,11,smartinetto1@google.it,Female,Anniston,AL");
+        User user8 = new User("Casi,Roizn,24,croizn2@scribd.com,Female,San Jose,CA");
+        User user9 = new User("Wilma,Guilaem,32,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user10 = new User("Bulma,Smith,30,bsmith3@sourceforge.net,Female,Pensacola,FL");
+        User user11= new User("Lola,Grimsdyke,56,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user12 = new User("Sybilla,Martinetto,75,smartinetto1@google.it,Female,Anniston,AL");
+        User user13 = new User("Casi,Roizn,15,croizn2@scribd.com,Female,San Jose,CA");
+        User user14 = new User("Wilma,Guilaem,17,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user15 = new User("Bulma,Smith,113,bsmith3@sourceforge.net,Female,Pensacola,FL");
+
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+        users.add(user5);
+        users.add(user6);
+        users.add(user7);
+        users.add(user8);
+        users.add(user9);
+        users.add(user10);
+        users.add(user11);
+        users.add(user12);
+        users.add(user13);
+        users.add(user14);
+        users.add(user15);
+
+        //System.out.println("Before Sort: " + users); // For Testing Users Before sort ##Delete-ME##
+
+        printUsersOldest10(users);
+
+        //System.out.println("After Sort: " + users); // For Testing Users After sort ##Delete-ME##
+
+
+        // --------------------------------------------------------------------[ Question 8 ]----- //
+
+        ArrayList<User> users = new ArrayList<User>();
+        User user1 = new User("Jasmine,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,SC");
+        User user2 = new User("Sybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL");
+        User user3 = new User("Casey,Roizn,78,croizn2@scribd.com,Female,San Jose,CA");
+        User user4 = new User("Wilma,Guilaem,84,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user5 = new User("Bulma,Smith,48,bsmith3@sourceforge.net,Female,Pensacola,FL");
+        User user6 = new User("Peter,Grimsdyke,12,lgrimsdyke0@facebook.com,Female,Newport Beach,CA");
+        User user7 = new User("Sybilla,Martinetto,11,smartinetto1@google.it,Female,Anniston,AL");
+        User user8 = new User("Casi,Roizn,24,croizn2@scribd.com,Female,San Jose,CA");
+        User user9 = new User("Wilma,Guilaem,32,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user10 = new User("Chris,Smith,30,bsmith3@sourceforge.net,Female,Pensacola,FL");
+        User user11= new User("Lola,Grimsdyke,56,lgrimsdyke0@facebook.com,Female,Newport Beach,NC");
+        User user12 = new User("Sybilla,Martinetto,75,smartinetto1@google.it,Female,Anniston,AL");
+        User user13 = new User("Casie,Roizn,15,croizn2@scribd.com,Female,San Jose,CA");
+        User user14 = new User("Wilma,Guilaem,17,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User user15 = new User("Bulma,Smith,113,bsmith3@sourceforge.net,Female,Pensacola,SC");
+
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+        users.add(user5);
+        users.add(user6);
+        users.add(user7);
+        users.add(user8);
+        users.add(user9);
+        users.add(user10);
+        users.add(user11);
+        users.add(user12);
+        users.add(user13);
+        users.add(user14);
+        users.add(user15);
+
+        //System.out.println("Before Sort: " + users); // For Testing Users Before sort ##Delete-ME##
+
+        printUserStateStats(users);
+
+        //System.out.println("After Sort: " + users); // For Testing Users After sort ##Delete-ME##
+
+
+        // --------------------------------------------------------------------[ Question 9 ]----- //
+
+
+       Set<String> result = getWordOverlap(Data.words_1,Data.words_2);
+
+        for (String fromSet : result) {
+            System.out.println(fromSet);
         }
 
+*/
+
+        // --------------------------------------------------------------------[ Question 10 ]----- //
+
+        // --------------------------- [ Test Case 1: Custom Data ] ------ //
+
+        /*
+
+        ArrayList<User> users = new ArrayList<User>();
+
+        User user1 = new User("Jasmine,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,SC");
+        User user2 = new User("Sybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL");
+        User user3 = new User("Casey,Roizn,78,croizn2@scribd.com,Female,San Jose,CA");
+        User user4 = new User("Wilma,Guilaem,84,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+
+        ArrayList<User> otherUsers = new ArrayList<User>();
+        User userA = new User("Jasmine,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,SC");
+        User userB = new User("Casie,Roizn,15,croizn2@scribd.com,Female,San Jose,CA");
+        User userC = new User("Wilma,Guilaem,17,wguilaem3@sourceforge.net,Female,Pensacola,FL");
+        User userD = new User("Bulma,Smith,113,bsmith3@sourceforge.net,Female,Pensacola,SC");
+
+        otherUsers.add(userA);
+        otherUsers.add(userB);
+        otherUsers.add(userC);
+        otherUsers.add(userD);
+
          */
+        // --------------------------- [ Test Case 2: Data.users & Data.otherUsers ] ------ //
 
-    }
+        // ---- [ Run with getParsedUsers (Question 4 Method for Test) ] --------------- //
 
-    //Question 1
+       ArrayList<User> users = getParsedUsers(Data.users);
+       ArrayList<User> otherUsers = getParsedUsers(Data.otherUsers);
+
+       ArrayList<User> result = getUserOverlap(users, otherUsers);
+
+        for (User shared : result) {
+            System.out.println(shared);
+        }
+
+
+    } // End of Driver Method
+
+
+
+/*
+
+    // --------------------------------------------------------------------[ Question 1 ]----- //
     public static void fizzBuzz(){
         ArrayList<String> strings1to20 = new ArrayList<>();
 
@@ -115,13 +250,10 @@ public class Main {
         for (int i = 1; i <= 20; i++) {
             if(i % 3 == 0 && i % 5 == 0){
                 strings1to20.add("FizzBuzz");
-            //    System.out.println(i + " " + "FizzBuzz");
             } else if (i % 3 == 0){
                 strings1to20.add("Fizz");
-            //    System.out.println(i + " " + "Fizz");
             } else if (i % 5 == 0){
                 strings1to20.add("Buzz");
-            //    System.out.println(i + " " + "Buzz");
             } else {
                String strValueOfi = String.valueOf(i);
                 strings1to20.add(strValueOfi);
@@ -133,7 +265,9 @@ public class Main {
         }
     }
 
-    //Question 2
+
+
+    // --------------------------------------------------------------------[ Question 2 ]----- //
     public static boolean isEven(Integer num){
         if(num % 2 == 0){
             return true;
@@ -141,7 +275,8 @@ public class Main {
         return false;
     }
 
-    //Question 3
+
+    // --------------------------------------------------------------------[ Question 3 ]----- //
     public static Integer getMinimum(Integer[] numbers){
 
         if(numbers == null){
@@ -159,17 +294,23 @@ public class Main {
 
     }
 
+*/
 
-    //Question 4
+    // ---------------------------------------------------[ Question 4 | Also used for Question 10 Test 2 ]----- //
     public static ArrayList<User> getParsedUsers(String[] strings){
+        ArrayList<User> userList = new ArrayList<>();
 
-        // User user = new User();
-        return null;
+        for (String userData : strings) {
+            User user = new User(userData);
+            userList.add(user);
+        }
+
+        return userList;
     }
 
+/*
 
-
-    //Question 5
+    // --------------------------------------------------------------------[ Question 5 ]----- //
     public static void printUsers_OMN(ArrayList<User> users){
 
         for (int i = 0; i < users.size() ; i++) {
@@ -181,40 +322,88 @@ public class Main {
     }
 
 
-    //Question 6
+    // --------------------------------------------------------------------[ Question 6 ]----- //
     public static void printUsersSortedByAge(ArrayList<User> users){
 
-//        Collections.sort(users,);
+        Collections.sort(users, new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.age - o2.age;
+            }
+        });
 
         for (int i = 0; i < users.size() ; i++) {
             User currentUser = users.get(i);
-            System.out.println();
+            System.out.println(currentUser);
         }
 
     }
 
-    /*
+ */
 
-    //Question 7
+/*
+
+    // --------------------------------------------------------------------[ Question 7 ]----- //
     public static void printUsersOldest10(ArrayList<User> users){
 
+        Collections.sort(users);
+
+        List<User> userResult = users.subList(Math.max(users.size() - 10, 0), users.size());
+
+        for (User topTen : userResult) {
+            System.out.println(topTen);
+        }
+
     }
 
-    //Question 8
+
+    // --------------------------------------------------------------------[ Question 8 ]----- //
     public static void printUserStateStats(ArrayList<User> users){
 
+        HashMap<String, Integer> stateMap = new HashMap<>();
+
+        for (User u : users) {
+            Integer count = stateMap.get(u.getState());
+            if(!stateMap.containsKey(u.getState())){
+                stateMap.put(u.getState(),1);
+            } else {
+                stateMap.put(u.getState(), count + 1);
+            }
+
+        }
+
+        for (String key : stateMap.keySet()) {
+            Integer stateCount = stateMap.get(key);
+            System.out.println(key + " : " + stateCount);
+        }
+
     }
 
-    //Question 9
+    // --------------------------------------------------------------------[ Question 9 ]----- //
     public static Set<String> getWordOverlap(String[] listA, String[] listB){
 
+        Set<String> intersection = new HashSet<>(List.of(listA));
+        intersection.retainAll(List.of(listB));
+
+        return intersection;
     }
 
-    //Question 10
-    public static ArrayList<User> getUserOverlap(ArrayList<User> usersA, ArrayList<User> usersB){
-
-    }
 */
 
+    // --------------------------------------------------------------------[ Question 10 ]----- //
+    public static ArrayList<User> getUserOverlap(ArrayList<User> usersA, ArrayList<User> usersB){
 
-}
+        ArrayList<User> result = new ArrayList<>();
+
+        for (User match : usersA) {
+
+            if(usersB.contains(match)){
+                result.add(match);
+            }
+        }
+
+        return result;
+    }
+
+} // End of public class Main
+
